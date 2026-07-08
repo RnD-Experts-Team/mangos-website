@@ -1,0 +1,36 @@
+{
+  "name": "Mangos",
+  "established": 2011,
+  "location": "Columbus, Ohio",
+  "tagline": "One brand. Two experiences.",
+  "message": "Two doors under one name — a late-night bar and a halal Mediterranean kitchen, a one-minute walk apart in Columbus, Ohio.",
+  "walkNote": "1 min walk apart",
+  "businesses": [
+    {
+      "id": "bar",
+      "name": "Mangos Cafe",
+      "kind": "Bar • Hookah • Restaurant",
+      "blurb": "Late nights, hookah and good company since 2011.",
+      "href": "/bar",
+      "buildingPhoto": {
+        "src": "/images/bar/bar-building.jpg",
+        "alt": "Mangos Cafe at night, lit by warm string lights and a neon sign"
+      },
+      "transitionName": "biz-bar",
+      "mood": "night"
+    },
+    {
+      "id": "grill",
+      "name": "Mangos Mediterranean Grill",
+      "kind": "Mediterranean Grill • Halal",
+      "blurb": "Syrian-Lebanese halal cooking from Chef Adnan.",
+      "href": "/grill",
+      "buildingPhoto": {
+        "src": "/images/grill/grill-building.jpg",
+        "alt": "Mangos Mediterranean Grill storefront during the day"
+      },
+      "transitionName": "biz-grill",
+      "mood": "day"
+    }
+  ]
+}

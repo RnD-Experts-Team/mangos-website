@@ -1,0 +1,38 @@
+{
+  "id": "grill",
+  "name": { "en": "Mangos Mediterranean Grill", "ar": "مانجوس — مطعم متوسطي" },
+  "kind": { "en": "Mediterranean Grill • Halal", "ar": "مطعم متوسطي • حلال" },
+  "cuisine": { "en": "Syrian-Lebanese", "ar": "سوري لبناني" },
+  "halalCertified": true,
+  "tagline": { "en": "Halal Mediterranean, made with heart.", "ar": "مأكولات متوسطية حلال، مصنوعة بشغف." },
+  "blurb": {
+    "en": "Authentic Syrian-Lebanese halal cooking — shawarma, kebab, falafel and build-your-own bowls from Chef Adnan.",
+    "ar": "مأكولات سورية لبنانية حلال أصيلة — شاورما، كباب، فلافل وأطباق تصنعها بنفسك من الشيف عدنان."
+  },
+  "address": {
+    "line1": "17 Smith Pl",
+    "city": "Columbus",
+    "state": "OH",
+    "zip": "43201",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=17+Smith+Pl+Columbus+OH+43201"
+  },
+  "contact": {
+    "phone": "(614) 000-0000",
+    "email": "hello@mangosgrill.com"
+  },
+  "hours": [
+    { "day": "Monday", "open": "11:00 AM", "close": "10:00 PM" },
+    { "day": "Tuesday", "open": "11:00 AM", "close": "10:00 PM" },
+    { "day": "Wednesday", "open": "11:00 AM", "close": "10:00 PM" },
+    { "day": "Thursday", "open": "11:00 AM", "close": "10:00 PM" },
+    { "day": "Friday", "open": "11:00 AM", "close": "11:00 PM" },
+    { "day": "Saturday", "open": "11:00 AM", "close": "11:00 PM" },
+    { "day": "Sunday", "open": "12:00 PM", "close": "9:00 PM" }
+  ],
+  "heroImage": {
+    "src": "/images/grill/grill-building.jpg",
+    "alt": "Mangos Mediterranean Grill storefront during the day"
+  },
+  "transitionName": "biz-grill",
+  "mockContact": true
+}
