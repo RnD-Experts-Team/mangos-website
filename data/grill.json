@@ -30,7 +30,7 @@
     { "day": "Sunday", "open": "12:00 PM", "close": "9:00 PM" }
   ],
   "heroImage": {
-    "src": "/images/grill/grill-building.jpg",
+    "src": "/images/grill/grill-building.png",
     "alt": "Mangos Mediterranean Grill storefront during the day"
   },
   "transitionName": "biz-grill",

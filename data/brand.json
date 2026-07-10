@@ -13,7 +13,7 @@
       "blurb": "Late nights, hookah and good company since 2011.",
       "href": "/bar",
       "buildingPhoto": {
-        "src": "/images/bar/bar-building.jpg",
+        "src": "/images/bar/bar-building.png",
         "alt": "Mangos Cafe at night, lit by warm string lights and a neon sign"
       },
       "transitionName": "biz-bar",
@@ -26,11 +26,12 @@
       "blurb": "Syrian-Lebanese halal cooking from Chef Adnan.",
       "href": "/grill",
       "buildingPhoto": {
-        "src": "/images/grill/grill-building.jpg",
+        "src": "/images/grill/grill-building.png",
         "alt": "Mangos Mediterranean Grill storefront during the day"
       },
       "transitionName": "biz-grill",
-      "mood": "day"
+      "mood": "day",
+      "halal": true
     }
   ]
 }

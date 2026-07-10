@@ -5,6 +5,7 @@
   "established": 2011,
   "tagline": "Columbus' late-night living room.",
   "blurb": "A bar, hookah lounge and restaurant on Smith Place — where Columbus comes to unwind, celebrate and linger since 2011.",
+  "about": "Mangos Cafe is located in downtown Columbus' Short North Arts District, about a 7-minute drive from Ohio State University. Our large patio is fully covered and open all year long, with heaters to keep you warm through the winter. We also have a private room available to rent for parties, meetings and special events.",
   "address": {
     "line1": "21 Smith Pl",
     "city": "Columbus",
@@ -27,8 +28,62 @@
     { "day": "Sunday", "open": "2:00 PM", "close": "12:00 AM" }
   ],
   "heroImage": {
-    "src": "/images/bar/bar-building.jpg",
+    "src": "/images/bar/bar-building.png",
     "alt": "Mangos Cafe at night, lit by warm string lights and a neon sign"
   },
-  "transitionName": "biz-bar"
+  "transitionName": "biz-bar",
+  "menu": [
+    {
+      "id": "cocktails",
+      "title": "Alcoholic Drinks & Cocktails",
+      "tabLabel": "Drinks & Cocktails",
+      "intro": "At Mangos Cafe we take the drinks we serve very seriously. Our certified bartenders will go out of their way to find the best drink for your food and your mood — a full bar of whiskey, tequila, vodka, scotch, cocktails, beer and seltzers. Ready to discover your happy hour?",
+      "items": [
+        { "name": "Whiskey Flight", "description": "A guided tasting from our whiskey selection", "price": "$18", "mock": true },
+        { "name": "House Margarita", "description": "Tequila, lime, orange liqueur", "price": "$12", "mock": true },
+        { "name": "Mango Mule", "description": "Vodka, ginger beer, fresh mango", "price": "$13", "mock": true },
+        { "name": "Craft Beer & Seltzers", "description": "Rotating local and import selection", "price": "$6–9", "mock": true },
+        { "name": "Tequila Sunrise", "description": "Tequila, orange juice, grenadine", "price": "$12", "mock": true },
+        { "name": "Old Fashioned", "description": "Whiskey, bitters, orange, sugar", "price": "$14", "mock": true }
+      ]
+    },
+    {
+      "id": "hookah",
+      "title": "Hookah & Tobacco Flavors",
+      "tabLabel": "Hookah",
+      "intro": "Exceptional hookah service on Custom LED Tipsy Hookahs and All-Glass LED Hookahs, with house blend flavors and many more — a Mangos signature since day one.",
+      "items": [
+        { "name": "Double Apple", "description": "The classic house favorite", "price": "$22", "mock": true },
+        { "name": "Mint Chill", "description": "Cool mint, smooth exhale", "price": "$22", "mock": true },
+        { "name": "Blue Mist", "description": "Berry and citrus house blend", "price": "$24", "mock": true },
+        { "name": "Grape Ice", "description": "Sweet grape over ice-cooled coals", "price": "$24", "mock": true },
+        { "name": "Custom House Blend", "description": "Build your own with our staff", "price": "$26", "mock": true },
+        { "name": "LED Tipsy Hookah", "description": "All-glass LED setup upgrade", "price": "$32", "mock": true }
+      ]
+    },
+    {
+      "id": "food-and-beverages",
+      "title": "Food and Beverages",
+      "tabLabel": "Food & Bites",
+      "intro": "A delicious food menu to go with your night out — wings, fries and shareables, plus smoothies, coffee and tea for whenever you need to slow back down.",
+      "items": [
+        { "name": "Chicken Wings", "description": "Buffalo, BBQ or lemon pepper", "price": "$13", "mock": true },
+        { "name": "Loaded Fries", "description": "Cheese, house sauce, scallions", "price": "$10", "mock": true },
+        { "name": "Mozzarella Sticks", "description": "Marinara on the side", "price": "$9", "mock": true },
+        { "name": "Fried Pickles", "description": "Ranch dipping sauce", "price": "$8", "mock": true },
+        { "name": "Mango Smoothie", "description": "Fresh mango, blended cold", "price": "$7", "mock": true },
+        { "name": "Coffee & Tea", "description": "Hot or iced", "price": "$4", "mock": true }
+      ]
+    }
+  ],
+  "moments": [
+    { "id": "patio-glow", "type": "image", "src": "/images/bar/moments/patio-glow.jpg", "alt": "Warm string lights glowing over the covered patio at night" },
+    { "id": "string-lights", "type": "image", "src": "/images/bar/moments/string-lights.jpg", "alt": "Close-up of warm string lights against the night sky" },
+    { "id": "hookah-smoke", "type": "image", "src": "/images/bar/moments/hookah-smoke.jpg", "alt": "Smoke swirling from a hookah session" },
+    { "id": "cocktail-pour", "type": "image", "src": "/images/bar/moments/cocktail-pour.jpg", "alt": "A cocktail being poured at the bar" },
+    { "id": "neon-sign", "type": "image", "src": "/images/bar/moments/neon-sign.jpg", "alt": "Close-up of the Mangos neon sign" },
+    { "id": "bar-crowd", "type": "image", "src": "/images/bar/moments/bar-crowd.jpg", "alt": "A lively night at the bar" },
+    { "id": "private-room", "type": "image", "src": "/images/bar/moments/private-room.jpg", "alt": "The private event room set up for a gathering" },
+    { "id": "late-night", "type": "image", "src": "/images/bar/moments/late-night.jpg", "alt": "The bar glowing warmly late into the night" }
+  ]
 }

@@ -17,13 +17,13 @@ export function BrandHero({ brand }: { brand: Brand }) {
         Est. {brand.established} — {brand.location}
       </motion.p>
 
-      <motion.div variants={fadeUp} className="mt-4 sm:mt-5">
+      <motion.div variants={fadeUp} className="mt-1">
         <Wordmark outline className="text-[clamp(3.75rem,13vw,9.5rem)] tracking-[0.01em]" />
       </motion.div>
 
       <motion.p
         variants={fadeUp}
-        className="mt-5 max-w-xl text-balance text-base text-ink-muted sm:text-lg"
+        className="mt-2 max-w-xl text-balance text-base text-ink-muted sm:text-lg"
       >
         {brand.message}
       </motion.p>

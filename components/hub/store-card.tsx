@@ -53,6 +53,13 @@ export function StoreCard({ card }: { card: BrandCard }) {
       <div className="absolute inset-0 bg-black/45 transition-colors duration-500 group-hover:bg-black/25" />
       <div className="absolute inset-0" style={{ background: "var(--scrim-bottom)" }} />
 
+      {card.halal && (
+        <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-gold backdrop-blur-sm sm:right-6 sm:top-6">
+          <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+          Halal Certified
+        </span>
+      )}
+
       <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
         <p className="text-eyebrow text-[11px] text-white/75">{card.kind}</p>
         <h2 className="mt-2 font-display text-4xl leading-none text-white sm:text-5xl">

@@ -56,17 +56,15 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
     [reduce, router],
   );
 
-  // Mark arrival once the destination route has committed.
+  // Mark arrival once the destination route has committed. If the photo already
+  // finished expanding (stage is "hold"), advance straight to "out" here instead
+  // of relying on a second effect to reconcile the two conditions later.
   useEffect(() => {
     if (payload && targetRef.current && pathname === targetRef.current) {
       setArrived(true);
+      setStage((s) => (s === "hold" ? "out" : s));
     }
   }, [pathname, payload]);
-
-  // Reveal only after the photo has fully expanded AND the page arrived.
-  useEffect(() => {
-    if (stage === "hold" && arrived) setStage("out");
-  }, [stage, arrived]);
 
   // Restore scroll if the provider unmounts mid-transition.
   useEffect(
@@ -86,7 +84,14 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
             className="absolute inset-0 bg-cinematic"
             initial={{ opacity: 0 }}
             animate={{ opacity: stage === "out" ? 0 : 0.94 }}
-            transition={{ duration: stage === "out" ? dur.base : dur.slow, ease: easeOut }}
+            transition={
+              stage === "out"
+                ? { duration: dur.base, ease: easeOut, delay: dur.base }
+                : { duration: dur.slow, ease: easeOut }
+            }
+            onAnimationComplete={() => {
+              if (stage === "out") cleanup();
+            }}
           />
           <motion.img
             src={payload.src}
@@ -102,13 +107,14 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
             }}
             animate={
               stage === "out"
-                ? { opacity: 0 }
+                ? { top: 0, left: 0, width: payload.vw, height: payload.vh, borderRadius: 0, opacity: 0 }
                 : { top: 0, left: 0, width: payload.vw, height: payload.vh, borderRadius: 0 }
             }
             transition={{ duration: stage === "out" ? dur.base : dur.cine, ease: easeOut }}
             onAnimationComplete={() => {
-              if (stage === "expand") setStage("hold");
-              else if (stage === "out") cleanup();
+              // If the route already committed while the photo was still expanding,
+              // skip the "hold" stage entirely instead of getting stuck waiting on it.
+              if (stage === "expand") setStage(arrived ? "out" : "hold");
             }}
           />
         </div>

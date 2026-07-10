@@ -3,6 +3,9 @@ import Link from "next/link";
 import { getBar } from "@/services/bar.service";
 import { BusinessHero } from "@/components/business/business-hero";
 import { InfoBlock } from "@/components/business/info-block";
+import { AboutSection } from "@/components/bar/about-section";
+import { MenuSection } from "@/components/bar/menu-section";
+import { MomentsGallery } from "@/components/bar/moments-gallery";
 import { Container } from "@/components/ui/container";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -18,6 +21,12 @@ export default async function BarPage() {
       <BusinessHero image={bar.heroImage} eyebrow={bar.kind} title={bar.name}>
         <p className="max-w-md text-base text-ink-muted">{bar.tagline}</p>
       </BusinessHero>
+
+      <AboutSection about={bar.about} />
+
+      <MenuSection categories={bar.menu} />
+
+      <MomentsGallery moments={bar.moments} />
 
       <InfoBlock
         blurb={bar.blurb}

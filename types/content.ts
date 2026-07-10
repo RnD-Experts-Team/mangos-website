@@ -41,6 +41,32 @@ export interface Contact {
   socials?: SocialLink[];
 }
 
+export interface MenuItem {
+  name: string;
+  description?: string;
+  /** Display string, e.g. "$12" or "$6–9" (display-only; supports ranges). */
+  price?: string;
+  /** True while this is an invented example item pending the client's real list. */
+  mock?: boolean;
+}
+
+export interface MenuCategory {
+  id: string;
+  title: string;
+  /** Short label for the tab bar; falls back to `title`. */
+  tabLabel?: string;
+  intro: string;
+  items: MenuItem[];
+}
+
+export interface MomentItem extends ImageAsset {
+  id: string;
+  type: "image" | "video";
+  /** Frame shown before playback; effectively required when type is "video". */
+  poster?: string;
+  caption?: string;
+}
+
 export type BusinessId = "bar" | "grill";
 
 /** A business as shown on the hub chooser. */
@@ -54,6 +80,8 @@ export interface BrandCard {
   /** Shared key linking the hub photo to the destination hero (morph). */
   transitionName: string;
   mood: "night" | "day";
+  /** Shows a "Halal Certified" badge on the card when true. */
+  halal?: boolean;
 }
 
 /** HUB (`/`) content. */
@@ -75,11 +103,14 @@ export interface Bar {
   established: number;
   tagline: string;
   blurb: string;
+  about: string;
   address: Address;
   contact: Contact;
   hours: Hours[];
   heroImage: ImageAsset;
   transitionName: string;
+  menu: MenuCategory[];
+  moments: MomentItem[];
 }
 
 /** GRILL (`/grill`) — bilingual (Arabic content rendered in a later pass). */
