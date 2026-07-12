@@ -9,6 +9,21 @@
     "en": "Authentic Syrian-Lebanese halal cooking — shawarma, kebab, falafel and build-your-own bowls from Chef Adnan.",
     "ar": "مأكولات سورية لبنانية حلال أصيلة — شاورما، كباب، فلافل وأطباق تصنعها بنفسك من الشيف عدنان."
   },
+  "about": {
+    "en": "Just up the block from Mangos Cafe, our grill brings 100% halal Syrian-Lebanese cooking to Short North — marinated overnight, charred over an open flame.",
+    "ar": "على بُعد خطوات من مانجوس كافيه، يقدّم مطعمنا مأكولات سورية لبنانية حلال ١٠٠٪ — مُتبّلة طوال الليل ومشوية على النار المكشوفة."
+  },
+  "aboutImage": {
+    "src": "/images/grill/about-kitchen.jpg",
+    "alt": "Skewers of marinated chicken and kofta grilling over an open flame"
+  },
+  "chef": {
+    "name": "Chef Adnan",
+    "note": {
+      "en": "Twenty years over the coals in Aleppo and Beirut, now grilling on Smith Place.",
+      "ar": "عشرون عامًا على الفحم في حلب وبيروت، والآن على سميث بليس."
+    }
+  },
   "address": {
     "line1": "17 Smith Pl",
     "city": "Columbus",
@@ -34,5 +49,132 @@
     "alt": "Mangos Mediterranean Grill storefront during the day"
   },
   "transitionName": "biz-grill",
+  "menu": [
+    {
+      "id": "wraps",
+      "title": "Mediterranean Wraps",
+      "tabLabel": "Wraps",
+      "intro": "Fresh-off-the-flame fillings rolled in warm pita or saj bread, with garlic toum, pickles and crisp veg. Handheld, halal and made to order.",
+      "items": [
+        { "id": "chicken-shawarma-wrap", "name": "Chicken Shawarma Wrap", "description": "Marinated chicken, garlic toum, pickles", "details": "Overnight-marinated chicken shaved off the spit, wrapped with our creamy garlic toum, house pickles and a squeeze of lemon.", "price": "$11", "image": "/images/grill/menu/chicken-shawarma-wrap.jpg", "gallery": ["/images/grill/menu/chicken-shawarma-wrap-2.jpg", "/images/grill/menu/chicken-shawarma-wrap-3.jpg"], "mock": true },
+        { "id": "beef-shawarma-wrap", "name": "Beef Shawarma Wrap", "description": "Spiced beef, tahini, tomato, onion", "details": "Thin-sliced spiced beef with nutty tahini, tomato and sumac onions, rolled tight and pressed on the flat top.", "price": "$12", "image": "/images/grill/menu/beef-shawarma-wrap.jpg", "gallery": ["/images/grill/menu/beef-shawarma-wrap-2.jpg", "/images/grill/menu/beef-shawarma-wrap-3.jpg"], "mock": true },
+        { "id": "falafel-wrap", "name": "Falafel Wrap", "description": "Crispy falafel, hummus, tahini, veg", "details": "House-fried falafel with hummus, tahini, tomato, cucumber and pickled turnips — fully plant-based.", "price": "$10", "image": "/images/grill/menu/falafel-wrap.jpg", "gallery": ["/images/grill/menu/falafel-wrap-2.jpg", "/images/grill/menu/falafel-wrap-3.jpg"], "mock": true },
+        { "id": "chicken-kebab-wrap", "name": "Chicken Kebab Wrap", "description": "Grilled tawook, garlic, pickles", "details": "Charcoal-grilled shish tawook with garlic toum and pickles, wrapped in warm saj bread.", "price": "$12", "image": "/images/grill/menu/chicken-kebab-wrap.jpg", "gallery": ["/images/grill/menu/chicken-kebab-wrap-2.jpg", "/images/grill/menu/chicken-kebab-wrap-3.jpg"], "mock": true },
+        { "id": "kofta-wrap", "name": "Beef Kofta Wrap", "description": "Grilled kofta, tahini, parsley, onion", "details": "Hand-mixed beef kofta grilled over flame, with tahini, parsley and sumac onions.", "price": "$12", "image": "/images/grill/menu/kofta-wrap.jpg", "gallery": ["/images/grill/menu/kofta-wrap-2.jpg", "/images/grill/menu/kofta-wrap-3.jpg"], "mock": true },
+        { "id": "halloumi-wrap", "name": "Halloumi Wrap", "description": "Grilled halloumi, zaatar, greens", "details": "Golden grilled halloumi with za'atar, tomato and greens — a vegetarian favorite.", "price": "$11", "image": "/images/grill/menu/halloumi-wrap.jpg", "gallery": ["/images/grill/menu/halloumi-wrap-2.jpg", "/images/grill/menu/halloumi-wrap-3.jpg"], "mock": true }
+      ]
+    },
+    {
+      "id": "burgers",
+      "title": "Burgers",
+      "tabLabel": "Burgers",
+      "intro": "Halal smash burgers with a Mediterranean twist — griddled on the flat top and stacked on a toasted brioche bun.",
+      "items": [
+        { "id": "classic-smash", "name": "Classic Smash", "description": "Double halal beef, cheese, house sauce", "details": "Two smashed halal beef patties, American cheese, pickles and our house sauce on toasted brioche.", "price": "$12", "image": "/images/grill/menu/classic-smash.jpg", "gallery": ["/images/grill/menu/classic-smash-2.jpg", "/images/grill/menu/classic-smash-3.jpg"], "mock": true },
+        { "id": "mango-grill-burger", "name": "Mango Grill Burger", "description": "Beef, halloumi, tomato jam, arugula", "details": "Our signature — halal beef topped with grilled halloumi, sweet tomato jam and peppery arugula.", "price": "$14", "image": "/images/grill/menu/mango-grill-burger.jpg", "gallery": ["/images/grill/menu/mango-grill-burger-2.jpg", "/images/grill/menu/mango-grill-burger-3.jpg"], "mock": true },
+        { "id": "harissa-burger", "name": "Spicy Harissa Burger", "description": "Beef, harissa mayo, pickled onion", "details": "A kick of North African harissa mayo with pickled onions and melted pepper jack.", "price": "$13", "image": "/images/grill/menu/harissa-burger.jpg", "gallery": ["/images/grill/menu/harissa-burger-2.jpg", "/images/grill/menu/harissa-burger-3.jpg"], "mock": true },
+        { "id": "chicken-shawarma-burger", "name": "Shawarma Chicken Burger", "description": "Shawarma-spiced patty, toum, pickles", "details": "A griddled shawarma-spiced chicken patty with garlic toum and pickles.", "price": "$12", "image": "/images/grill/menu/chicken-shawarma-burger.jpg", "gallery": ["/images/grill/menu/chicken-shawarma-burger-2.jpg", "/images/grill/menu/chicken-shawarma-burger-3.jpg"], "mock": true },
+        { "id": "falafel-burger", "name": "Falafel Burger", "description": "Falafel patty, tahini slaw, tomato", "details": "A crisp falafel patty with tahini slaw and tomato — hearty and meat-free.", "price": "$11", "image": "/images/grill/menu/falafel-burger.jpg", "gallery": ["/images/grill/menu/falafel-burger-2.jpg", "/images/grill/menu/falafel-burger-3.jpg"], "mock": true },
+        { "id": "kofta-burger", "name": "Kofta Burger", "description": "Grilled kofta patty, tahini, sumac onion", "details": "A flame-grilled kofta patty with tahini and sumac onions on toasted brioche.", "price": "$13", "image": "/images/grill/menu/kofta-burger.jpg", "gallery": ["/images/grill/menu/kofta-burger-2.jpg", "/images/grill/menu/kofta-burger-3.jpg"], "mock": true }
+      ]
+    },
+    {
+      "id": "salads",
+      "title": "Salads",
+      "tabLabel": "Salads",
+      "intro": "Bright, herb-forward salads dressed in lemon, olive oil and sumac. Add any grilled protein to make it a meal.",
+      "items": [
+        { "id": "fattoush", "name": "Fattoush", "description": "Greens, sumac, crispy pita, lemon", "details": "Crisp romaine, tomato, cucumber and radish with sumac dressing and crunchy fried pita.", "price": "$9", "image": "/images/grill/menu/fattoush.jpg", "gallery": ["/images/grill/menu/fattoush-2.jpg", "/images/grill/menu/fattoush-3.jpg"], "mock": true },
+        { "id": "tabbouleh", "name": "Tabbouleh", "description": "Parsley, bulgur, tomato, mint, lemon", "details": "Finely chopped parsley and mint with bulgur, tomato and a lemon-olive oil dressing.", "price": "$9", "image": "/images/grill/menu/tabbouleh.jpg", "gallery": ["/images/grill/menu/tabbouleh-2.jpg", "/images/grill/menu/tabbouleh-3.jpg"], "mock": true },
+        { "id": "mediterranean-salad", "name": "Mediterranean Salad", "description": "Greens, feta, olives, cucumber, tomato", "details": "Chopped greens with feta, kalamata olives, cucumber, tomato and red onion in lemon vinaigrette.", "price": "$10", "image": "/images/grill/menu/mediterranean-salad.jpg", "gallery": ["/images/grill/menu/mediterranean-salad-2.jpg", "/images/grill/menu/mediterranean-salad-3.jpg"], "mock": true },
+        { "id": "shawarma-salad", "name": "Chicken Shawarma Salad", "description": "Greens, shawarma chicken, toum drizzle", "details": "A full bed of greens topped with shawarma chicken, pickles and a garlic toum drizzle.", "price": "$13", "image": "/images/grill/menu/shawarma-salad.jpg", "gallery": ["/images/grill/menu/shawarma-salad-2.jpg", "/images/grill/menu/shawarma-salad-3.jpg"], "mock": true },
+        { "id": "hummus-plate", "name": "Hummus Plate", "description": "Hummus, olive oil, warm pita", "details": "Silky house hummus pooled with olive oil and paprika, served with warm pita.", "price": "$8", "image": "/images/grill/menu/hummus-plate.jpg", "gallery": ["/images/grill/menu/hummus-plate-2.jpg", "/images/grill/menu/hummus-plate-3.jpg"], "mock": true },
+        { "id": "mezze-sampler", "name": "Mezze Sampler", "description": "Hummus, tabbouleh, falafel, pita", "details": "A little of everything — hummus, tabbouleh, two falafel and warm pita to share.", "price": "$12", "image": "/images/grill/menu/mezze-sampler.jpg", "gallery": ["/images/grill/menu/mezze-sampler-2.jpg", "/images/grill/menu/mezze-sampler-3.jpg"], "mock": true }
+      ]
+    },
+    {
+      "id": "grilled-entrees",
+      "title": "Chef Adnan's Grilled Entrées",
+      "tabLabel": "Grilled Entrées",
+      "intro": "Charcoal-grilled platters straight off Chef Adnan's flame, served with saffron rice, grilled veg, salad and warm pita.",
+      "items": [
+        { "id": "mixed-grill", "name": "Chef's Mixed Grill", "description": "Tawook, kofta & lamb, saffron rice", "details": "The full board — shish tawook, beef kofta and lamb chops over saffron rice with grilled veg and pita. Built to share.", "price": "$26", "image": "/images/grill/menu/mixed-grill.jpg", "gallery": ["/images/grill/menu/mixed-grill-2.jpg", "/images/grill/menu/mixed-grill-3.jpg"], "mock": true },
+        { "id": "shish-tawook", "name": "Shish Tawook", "description": "Charcoal chicken skewers, toum", "details": "Marinated chicken skewers grilled over charcoal, served with garlic toum, rice and salad.", "price": "$17", "image": "/images/grill/menu/shish-tawook.jpg", "gallery": ["/images/grill/menu/shish-tawook-2.jpg", "/images/grill/menu/shish-tawook-3.jpg"], "mock": true },
+        { "id": "beef-kofta", "name": "Beef Kofta Kebab", "description": "Hand-mixed kofta skewers, sumac onion", "details": "Hand-mixed beef and parsley kofta grilled on skewers, with sumac onions, rice and salad.", "price": "$18", "image": "/images/grill/menu/beef-kofta.jpg", "gallery": ["/images/grill/menu/beef-kofta-2.jpg", "/images/grill/menu/beef-kofta-3.jpg"], "mock": true },
+        { "id": "lamb-chops", "name": "Grilled Lamb Chops", "description": "Marinated chops, charred to order", "details": "Four marinated lamb chops charred over flame, served with saffron rice and grilled veg.", "price": "$24", "image": "/images/grill/menu/lamb-chops.jpg", "gallery": ["/images/grill/menu/lamb-chops-2.jpg", "/images/grill/menu/lamb-chops-3.jpg"], "mock": true },
+        { "id": "grilled-salmon", "name": "Grilled Salmon", "description": "Lemon-herb salmon, saffron rice", "details": "A lemon-herb marinated salmon fillet grilled to order with rice and salad.", "price": "$21", "image": "/images/grill/menu/grilled-salmon.jpg", "gallery": ["/images/grill/menu/grilled-salmon-2.jpg", "/images/grill/menu/grilled-salmon-3.jpg"], "mock": true },
+        { "id": "falafel-platter", "name": "Falafel Platter", "description": "Falafel, hummus, tahini, rice, salad", "details": "Six house falafel with hummus, tahini, saffron rice and salad — fully plant-based.", "price": "$15", "image": "/images/grill/menu/falafel-platter.jpg", "gallery": ["/images/grill/menu/falafel-platter-2.jpg", "/images/grill/menu/falafel-platter-3.jpg"], "mock": true }
+      ]
+    }
+  ],
+  "bowl": {
+    "eyebrow": "The Mangos Way",
+    "title": "Build Your Own Bowl",
+    "intro": "Four steps, endless combinations. Pick your base, your protein off the grill, a spread and as many toppings as you like — Chef Adnan builds it in front of you.",
+    "basePrice": "$12",
+    "steps": [
+      {
+        "id": "base",
+        "title": "Choose your base",
+        "hint": "Pick one",
+        "options": [
+          { "id": "basmati", "name": "Basmati Rice", "description": "Fluffy long-grain", "image": "/images/grill/bowl/basmati.jpg", "mock": true },
+          { "id": "saffron-rice", "name": "Saffron Rice", "description": "Golden, fragrant", "image": "/images/grill/bowl/saffron-rice.jpg", "mock": true },
+          { "id": "vermicelli-rice", "name": "Vermicelli Rice", "description": "Toasted noodle & rice", "image": "/images/grill/bowl/vermicelli-rice.jpg", "mock": true },
+          { "id": "mixed-greens", "name": "Mixed Greens", "description": "Keep it light", "image": "/images/grill/bowl/mixed-greens.jpg", "mock": true },
+          { "id": "half-and-half", "name": "Half & Half", "description": "Rice + greens", "image": "/images/grill/bowl/half-and-half.jpg", "mock": true }
+        ]
+      },
+      {
+        "id": "protein",
+        "title": "Choose your protein",
+        "hint": "Pick one — off the grill",
+        "options": [
+          { "id": "chicken-shawarma", "name": "Chicken Shawarma", "description": "Off the spit", "image": "/images/grill/bowl/chicken-shawarma.jpg", "mock": true },
+          { "id": "beef-shawarma", "name": "Beef Shawarma", "description": "Spiced & sliced", "image": "/images/grill/bowl/beef-shawarma.jpg", "mock": true },
+          { "id": "chicken-kebab", "name": "Chicken Kebab", "description": "Charcoal tawook", "image": "/images/grill/bowl/chicken-kebab.jpg", "mock": true },
+          { "id": "beef-kofta", "name": "Beef Kofta", "description": "Hand-mixed", "image": "/images/grill/bowl/beef-kofta.jpg", "mock": true },
+          { "id": "lamb", "name": "Grilled Lamb", "description": "Marinated chops", "price": "+$4", "image": "/images/grill/bowl/lamb.jpg", "mock": true },
+          { "id": "falafel", "name": "Falafel", "description": "Crispy, plant-based", "image": "/images/grill/bowl/falafel.jpg", "mock": true }
+        ]
+      },
+      {
+        "id": "spread",
+        "title": "Choose your spread",
+        "hint": "Pick one",
+        "options": [
+          { "id": "toum", "name": "Garlic Toum", "description": "Creamy & punchy", "image": "/images/grill/bowl/toum.jpg", "mock": true },
+          { "id": "hummus", "name": "Hummus", "description": "Silky chickpea", "image": "/images/grill/bowl/hummus.jpg", "mock": true },
+          { "id": "tahini", "name": "Tahini", "description": "Nutty sesame", "image": "/images/grill/bowl/tahini.jpg", "mock": true },
+          { "id": "tzatziki", "name": "Tzatziki", "description": "Cool cucumber-yogurt", "image": "/images/grill/bowl/tzatziki.jpg", "mock": true },
+          { "id": "harissa", "name": "Harissa", "description": "Bring the heat", "image": "/images/grill/bowl/harissa.jpg", "mock": true }
+        ]
+      },
+      {
+        "id": "toppings",
+        "title": "Choose your toppings",
+        "hint": "Pick as many as you like",
+        "multi": true,
+        "options": [
+          { "id": "pickles", "name": "House Pickles", "image": "/images/grill/bowl/pickles.jpg", "mock": true },
+          { "id": "turnips", "name": "Pickled Turnips", "image": "/images/grill/bowl/turnips.jpg", "mock": true },
+          { "id": "olives", "name": "Kalamata Olives", "image": "/images/grill/bowl/olives.jpg", "mock": true },
+          { "id": "feta", "name": "Feta", "image": "/images/grill/bowl/feta.jpg", "mock": true },
+          { "id": "tomato-cucumber", "name": "Tomato & Cucumber", "image": "/images/grill/bowl/tomato-cucumber.jpg", "mock": true },
+          { "id": "sumac-onion", "name": "Sumac Onions", "image": "/images/grill/bowl/sumac-onion.jpg", "mock": true },
+          { "id": "cabbage-slaw", "name": "Cabbage Slaw", "image": "/images/grill/bowl/cabbage-slaw.jpg", "mock": true },
+          { "id": "pita-chips", "name": "Crispy Pita", "image": "/images/grill/bowl/pita-chips.jpg", "mock": true }
+        ]
+      }
+    ]
+  },
+  "moments": [
+    { "id": "flame-grill", "type": "image", "src": "/images/grill/moments/flame-grill.jpg", "alt": "Skewers charring over open flame", "caption": "Everything hits the flame to order." },
+    { "id": "shawarma-spit", "type": "image", "src": "/images/grill/moments/shawarma-spit.jpg", "alt": "A vertical shawarma spit being shaved", "caption": "The spit turns all day long." },
+    { "id": "mezze-spread", "type": "image", "src": "/images/grill/moments/mezze-spread.jpg", "alt": "A spread of mezze dishes on a table", "caption": "Mezze, meant for sharing." },
+    { "id": "fresh-pita", "type": "image", "src": "/images/grill/moments/fresh-pita.jpg", "alt": "Fresh pita puffing on the grill", "caption": "Pita, warm off the press." },
+    { "id": "chef-adnan", "type": "image", "src": "/images/grill/moments/chef-adnan.jpg", "alt": "Chef Adnan plating a grilled platter", "caption": "Chef Adnan, at the pass." },
+    { "id": "bowl-build", "type": "image", "src": "/images/grill/moments/bowl-build.jpg", "alt": "A build-your-own bowl being assembled", "caption": "Your bowl, built your way." }
+  ],
   "mockContact": true
 }

@@ -104,7 +104,7 @@ export function MomentsGallery({ moments }: { moments: MomentItem[] }) {
   const active = index !== null ? moments[index] : null;
 
   return (
-    <Section>
+    <Section id="moments" className="scroll-mt-28 pt-0 sm:pt-0">
       <Container>
         <Reveal>
           <p className="text-eyebrow text-xs text-ink-faint">Moments</p>

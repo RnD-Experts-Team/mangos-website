@@ -1,28 +1,39 @@
 import { getGrill } from "@/services/grill.service";
 import { BusinessHero } from "@/components/business/business-hero";
-import { InfoBlock } from "@/components/business/info-block";
+import { HeroMeta } from "@/components/business/hero-meta";
+import { AboutSection } from "@/components/grill/about-section";
+import { MenuSection } from "@/components/grill/menu-section";
+import { BowlBuilderSection } from "@/components/grill/bowl-builder";
+import { MomentsStrip } from "@/components/grill/moments-strip";
 import { GrillFooter } from "@/components/grill/grill-chrome";
 
 export default async function GrillPage() {
   const grill = await getGrill();
-  const note = grill.mockContact
-    ? "Contact details shown are placeholders pending the final location info."
-    : undefined;
 
   return (
     <>
       {/* Rendered in English now; Arabic (EN/ع + RTL) arrives in the next pass. */}
       <BusinessHero image={grill.heroImage} eyebrow={grill.kind.en} title={grill.name.en}>
-        <p className="max-w-md text-base text-ink-muted">{grill.tagline.en}</p>
+        <HeroMeta tagline={grill.tagline.en} address={grill.address} hours={grill.hours} />
       </BusinessHero>
 
-      <InfoBlock
-        blurb={grill.blurb.en}
+      <AboutSection
+        name={grill.name.en}
+        about={grill.about.en}
+        image={grill.aboutImage}
         address={grill.address}
         contact={grill.contact}
         hours={grill.hours}
-        note={note}
+        halalCertified={grill.halalCertified}
+        chef={{ name: grill.chef.name, note: grill.chef.note.en }}
+        mockContact={grill.mockContact}
       />
+
+      <MenuSection categories={grill.menu} />
+
+      <BowlBuilderSection bowl={grill.bowl} />
+
+      <MomentsStrip moments={grill.moments} />
 
       <GrillFooter grill={grill} />
     </>
