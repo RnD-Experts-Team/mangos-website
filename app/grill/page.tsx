@@ -13,7 +13,7 @@ export default async function GrillPage() {
   return (
     <>
       {/* Rendered in English now; Arabic (EN/ع + RTL) arrives in the next pass. */}
-      <BusinessHero image={grill.heroImage} eyebrow={grill.kind.en} title={grill.name.en}>
+      <BusinessHero image={grill.heroImage} eyebrow={grill.kind.en} title={grill.name.en} objectFit="contain">
         <HeroMeta tagline={grill.tagline.en} address={grill.address} hours={grill.hours} />
       </BusinessHero>
 

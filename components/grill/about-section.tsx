@@ -48,7 +48,7 @@ export function AboutSection({
   const ordered = DAY_ORDER.map((d) => byDay[d]).filter(Boolean);
 
   return (
-    <Section>
+    <Section id="about" className="scroll-mt-20">
       <Container className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <Reveal>
           <div className="flex flex-wrap items-center gap-3">

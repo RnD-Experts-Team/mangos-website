@@ -83,15 +83,15 @@ export function MenuSection({ categories }: { categories: MenuCategory[] }) {
                 <button
                   type="button"
                   onClick={() => setSelected(item)}
-                  className="group flex w-full items-center gap-4 border-b border-white/[0.07] py-3.5 text-left transition-colors hover:border-white/20"
+                  className="group flex w-full cursor-pointer items-center gap-4 border-b border-white/[0.07] py-3.5 text-left transition-colors hover:border-white/20"
                 >
                   {item.image && (
-                    <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-white/10">
+                    <span className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-white/10">
                       <Image
                         src={item.image}
                         alt={item.name}
                         fill
-                        sizes="56px"
+                        sizes="80px"
                         className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                       />
                     </span>

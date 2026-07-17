@@ -38,7 +38,7 @@ export function MomentsStrip({ moments }: { moments: MomentItem[] }) {
   }
 
   return (
-    <Section className="overflow-hidden">
+    <Section id="moments" className="overflow-hidden scroll-mt-20">
       <Container>
         <Reveal className="flex items-end justify-between gap-4">
           <div>

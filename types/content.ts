@@ -53,6 +53,8 @@ export interface MenuItem {
   image?: string;
   /** Extra photos shown in the detail dialog (beyond `image`). */
   gallery?: string[];
+  /** Small descriptor chips shown in the dialog, e.g. ["House Favorite", "Tequila"]. */
+  tags?: string[];
   /** True while this is an invented example item pending the client's real list. */
   mock?: boolean;
 }

@@ -7,6 +7,7 @@ import { AboutSection } from "@/components/bar/about-section";
 import { MenuSection } from "@/components/bar/menu-section";
 import { MomentsGallery } from "@/components/bar/moments-gallery";
 import { Container } from "@/components/ui/container";
+import { CustomCursor } from "@/components/hub/custom-cursor";
 
 export async function generateMetadata(): Promise<Metadata> {
   const bar = await getBar();
@@ -18,7 +19,8 @@ export default async function BarPage() {
 
   return (
     <>
-      <BusinessHero image={bar.heroImage} eyebrow={bar.kind} title={bar.name}>
+      <CustomCursor />
+      <BusinessHero image={bar.heroImage} eyebrow={bar.kind} title={bar.name} borderBottom>
         <HeroMeta tagline={bar.tagline} address={bar.address} hours={bar.hours} />
       </BusinessHero>
 

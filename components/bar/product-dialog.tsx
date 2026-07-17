@@ -109,12 +109,34 @@ export function ProductDialog({ item, onClose }: { item: MenuItem; onClose: () =
         <div className="flex flex-col p-6 sm:p-8">
           <div className="flex items-start justify-between gap-4">
             <h3 className="font-display text-3xl leading-none text-ink">{item.name}</h3>
-            {item.price && (
-              <span className="shrink-0 font-heading text-lg tabular-nums text-ink">{item.price}</span>
-            )}
+            <div className="flex shrink-0 items-center gap-3">
+              {item.price && (
+                <span className="font-heading text-lg tabular-nums text-ink">{item.price}</span>
+              )}
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="Close"
+                className="flex h-7 w-7 items-center justify-center rounded-full text-ink-faint transition-colors hover:text-ink"
+              >
+                ✕
+              </button>
+            </div>
           </div>
           {item.description && (
             <p className="mt-3 text-sm font-medium text-accent">{item.description}</p>
+          )}
+          {item.tags && item.tags.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {item.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-white/10 bg-surface-2 px-2.5 py-0.5 text-xs text-ink-muted"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           )}
           {item.details && (
             <p className="mt-4 text-base leading-relaxed text-ink-muted">{item.details}</p>
@@ -126,14 +148,6 @@ export function ProductDialog({ item, onClose }: { item: MenuItem; onClose: () =
           )}
         </div>
 
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-cinematic/40 text-ink backdrop-blur-sm transition-colors hover:border-white/40"
-        >
-          ✕
-        </button>
       </motion.div>
     </motion.div>
   );
