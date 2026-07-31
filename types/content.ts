@@ -21,6 +21,8 @@ export interface Address {
   state: string;
   zip: string;
   mapUrl?: string;
+  /** Apple Maps deep link; used on Apple platforms in place of `mapUrl`. */
+  appleMapUrl?: string;
 }
 
 export interface Hours {
@@ -110,6 +112,62 @@ export interface BowlBuilder {
   steps: BowlStep[];
 }
 
+export interface Review {
+  id: string;
+  author: string;
+  /** 1–5, whole stars. */
+  rating: number;
+  text: string;
+  /** Where it came from, e.g. "Google". Shown as a small chip. */
+  source: string;
+  /** Display string, e.g. "2 months ago". Display-only — never parsed. */
+  date?: string;
+  /** True while this is an invented example pending the client's real reviews. */
+  mock?: boolean;
+}
+
+/** Reviews block on `/bar` — carries its own section copy so a CMS can edit it. */
+export interface ReviewsBlock {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  /** Destination for the "Review us on Google" CTA. Omit to hide the CTA. */
+  googleReviewUrl?: string;
+  /** Aggregate shown beside the heading. */
+  averageRating?: number;
+  totalCount?: number;
+  items: Review[];
+}
+
+/** Drives which action control a promotion card renders. */
+export type PromotionKind = "giftcard" | "newsletter" | "review";
+
+export interface Promotion {
+  id: string;
+  kind: PromotionKind;
+  eyebrow: string;
+  title: string;
+  description: string;
+  /** Big headline value, e.g. "10% OFF". */
+  highlight?: string;
+  /** Redeem code shown with a copy button, when there is one. */
+  code?: string;
+  /** External destination (gift-card store, Google review page). */
+  href?: string;
+  ctaLabel?: string;
+  terms?: string;
+  /** True while the URL/code is a placeholder awaiting the real value. */
+  mock?: boolean;
+}
+
+/** Offers block on `/bar` — gift card, newsletter discount, review discount. */
+export interface PromotionsBlock {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  items: Promotion[];
+}
+
 export type BusinessId = "bar" | "grill";
 
 /** A business as shown on the hub chooser. */
@@ -155,6 +213,8 @@ export interface Bar {
   transitionName: string;
   menu: MenuCategory[];
   moments: MomentItem[];
+  reviews: ReviewsBlock;
+  promotions: PromotionsBlock;
 }
 
 /** GRILL (`/grill`) — bilingual (Arabic content rendered in a later pass). */
@@ -181,6 +241,8 @@ export interface Grill {
   /** Signature build-your-own-bowl block. */
   bowl: BowlBuilder;
   moments: MomentItem[];
+  reviews: ReviewsBlock;
+  promotions: PromotionsBlock;
   /** True while contact details are placeholders awaiting the real values. */
   mockContact?: boolean;
 }

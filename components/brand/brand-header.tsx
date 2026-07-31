@@ -19,6 +19,8 @@ const SECTION_LINKS: Record<string, { id: string; label: string }[]> = {
     { id: "about", label: "About" },
     { id: "menu", label: "Menu" },
     { id: "moments", label: "Moments" },
+    { id: "offers", label: "Offers" },
+    { id: "reviews", label: "Reviews" },
   ],
 };
 
@@ -73,7 +75,7 @@ export function BrandHeader() {
         animate={{ height: condensed ? 62 : 82 }}
         transition={{ duration: dur.base, ease: easeStandard }}
       >
-        <Link href="/" aria-label="Mangos — home" className="flex items-center">
+        <Link href="/" aria-label="Mangos — home" className="flex shrink-0 items-center">
           <motion.span
             className="origin-left"
             animate={{ scale: condensed ? 0.86 : 1 }}
@@ -86,7 +88,7 @@ export function BrandHeader() {
         {links.length > 0 && (
           <nav
             aria-label="Section navigation"
-            className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 sm:flex"
+            className="hidden flex-1 items-center justify-center gap-6 px-6 md:flex"
           >
             {links.map((l) => {
               const isActive = active === l.id;
@@ -95,7 +97,7 @@ export function BrandHeader() {
                   key={l.id}
                   href={`#${l.id}`}
                   className={cn(
-                    "relative py-1 font-heading text-xs uppercase tracking-[0.14em] transition-colors",
+                    "relative py-1 font-heading text-sm uppercase tracking-[0.12em] transition-colors",
                     isActive ? "text-ink" : "text-ink-faint hover:text-ink-muted",
                   )}
                 >
@@ -113,7 +115,7 @@ export function BrandHeader() {
           </nav>
         )}
 
-        <span className="hidden text-eyebrow text-[11px] text-ink-faint sm:block">
+        <span className="hidden shrink-0 text-eyebrow text-[11px] text-ink-faint sm:block">
           Columbus, Ohio
         </span>
       </motion.div>

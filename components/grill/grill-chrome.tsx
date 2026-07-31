@@ -15,6 +15,8 @@ const SECTION_LINKS = [
   { id: "menu", label: "Menu" },
   { id: "build-a-bowl", label: "Your Bowl" },
   { id: "moments", label: "Moments" },
+  { id: "offers", label: "Offers" },
+  { id: "reviews", label: "Reviews" },
 ];
 
 function useActiveSection(ids: string[]) {
@@ -66,7 +68,7 @@ export function GrillHeader() {
         <Link
           href="/grill"
           aria-label="Mangos Mediterranean Grill — home"
-          className="flex items-baseline gap-2.5"
+          className="flex shrink-0 items-baseline gap-2.5"
         >
           <motion.span
             className="origin-left"
@@ -82,7 +84,7 @@ export function GrillHeader() {
 
         <nav
           aria-label="Section navigation"
-          className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 sm:flex"
+          className="hidden flex-1 items-center justify-center gap-5 px-6 lg:flex"
         >
           {SECTION_LINKS.map((l) => {
             const isActive = active === l.id;
@@ -91,7 +93,7 @@ export function GrillHeader() {
                 key={l.id}
                 href={`#${l.id}`}
                 className={cn(
-                  "relative py-1 font-heading text-xs uppercase tracking-[0.14em] transition-colors",
+                  "relative py-1 font-heading text-sm uppercase tracking-[0.12em] transition-colors",
                   isActive ? "text-ink" : "text-ink-faint hover:text-ink-muted",
                 )}
               >
@@ -108,7 +110,7 @@ export function GrillHeader() {
           })}
         </nav>
 
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-gold">
+        <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-gold">
           <span className="h-1.5 w-1.5 rounded-full bg-gold" />
           Halal Certified
         </span>

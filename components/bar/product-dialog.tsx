@@ -141,11 +141,6 @@ export function ProductDialog({ item, onClose }: { item: MenuItem; onClose: () =
           {item.details && (
             <p className="mt-4 text-base leading-relaxed text-ink-muted">{item.details}</p>
           )}
-          {item.mock && (
-            <p className="mt-auto pt-6 text-xs text-ink-faint">
-              Photos &amp; details are placeholders — real product shots coming soon.
-            </p>
-          )}
         </div>
 
       </motion.div>

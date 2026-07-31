@@ -14,18 +14,12 @@ export function MenuSection({ categories }: { categories: MenuCategory[] }) {
   const [active, setActive] = useState(0);
   const [selected, setSelected] = useState<MenuItem | null>(null);
   const category = categories[active];
-  const hasMock = categories.some((c) => c.items.some((i) => i.mock));
 
   return (
     <Section id="menu" className="scroll-mt-28 pt-0 sm:pt-0">
       <Container>
         <p className="text-eyebrow text-xs text-ink-faint">What&apos;s Pouring</p>
         <h2 className="mt-2 font-display text-4xl text-ink sm:text-5xl">The Menu</h2>
-        {hasMock && (
-          <p className="mt-3 text-xs text-ink-faint">
-            Sample menu — items, prices &amp; photos are placeholders, full menu coming soon.
-          </p>
-        )}
 
         {/* Tabs */}
         <div

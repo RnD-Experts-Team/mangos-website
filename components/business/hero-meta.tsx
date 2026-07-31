@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { useMapsHref } from "@/hooks/use-maps-href";
 import type { Address, Hours } from "@/types/content";
 
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -78,13 +79,14 @@ export function HeroMeta({
   const status = useSyncExternalStore(subscribe, () => computeStatus(hours), () => "");
   const [state, detail] = status.split("|");
   const open = state === "open";
+  const mapsHref = useMapsHref(address);
 
   return (
     <div className="max-w-md">
       <p className="text-base text-ink-muted">{tagline}</p>
       <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm text-ink-muted">
         <a
-          href={address.mapUrl}
+          href={mapsHref}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 transition-colors hover:text-ink"

@@ -6,6 +6,8 @@ import { HeroMeta } from "@/components/business/hero-meta";
 import { AboutSection } from "@/components/bar/about-section";
 import { MenuSection } from "@/components/bar/menu-section";
 import { MomentsGallery } from "@/components/bar/moments-gallery";
+import { ReviewsSection } from "@/components/bar/reviews-section";
+import { PromotionsSection } from "@/components/bar/promotions-section";
 import { Container } from "@/components/ui/container";
 import { CustomCursor } from "@/components/hub/custom-cursor";
 
@@ -35,6 +37,10 @@ export default async function BarPage() {
       <MenuSection categories={bar.menu} />
 
       <MomentsGallery moments={bar.moments} />
+
+      <PromotionsSection promotions={bar.promotions} />
+
+      <ReviewsSection reviews={bar.reviews} />
 
       <Container className="pb-20">
         <Link

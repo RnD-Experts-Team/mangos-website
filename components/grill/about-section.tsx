@@ -3,6 +3,8 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
+import { SocialLinks } from "@/components/bar/social-links";
+import { DirectionsButton } from "@/components/business/directions-button";
 import { cn } from "@/lib/cn";
 import type { Address, Contact, Hours, ImageAsset } from "@/types/content";
 
@@ -30,7 +32,6 @@ export function AboutSection({
   hours,
   halalCertified,
   chef,
-  mockContact,
 }: {
   name: string;
   about: string;
@@ -40,7 +41,6 @@ export function AboutSection({
   hours: Hours[];
   halalCertified: boolean;
   chef: { name: string; note: string };
-  mockContact?: boolean;
 }) {
   const todayName = new Date().toLocaleDateString("en-US", { weekday: "long" });
   const byDay: Record<string, Hours> = {};
@@ -79,22 +79,14 @@ export function AboutSection({
             {address.line1}, {address.city}, {address.state} {address.zip}
           </a>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <Button href={telHref(contact.phone)}>Call {contact.phone}</Button>
             <Button variant="outline" href={`mailto:${contact.email}`}>
               Email
             </Button>
-            {address.mapUrl && (
-              <Button variant="outline" href={address.mapUrl} target="_blank" rel="noopener noreferrer">
-                Directions
-              </Button>
-            )}
+            <DirectionsButton address={address} />
+            <SocialLinks socials={contact.socials} />
           </div>
-          {mockContact && (
-            <p className="mt-3 text-xs text-ink-faint">
-              Phone &amp; email are placeholders — real details coming soon.
-            </p>
-          )}
 
           <div className="mt-8 rounded-2xl border border-white/10 bg-surface-1 p-5 sm:p-6">
             <h3 className="font-heading text-xs uppercase tracking-[0.16em] text-ink-faint">Hours</h3>

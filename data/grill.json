@@ -33,7 +33,13 @@
   },
   "contact": {
     "phone": "(614) 000-0000",
-    "email": "hello@mangosgrill.com"
+    "email": "hello@mangosgrill.com",
+    "socials": [
+      { "label": "Instagram", "href": "" },
+      { "label": "TikTok", "href": "" },
+      { "label": "Facebook", "href": "" },
+      { "label": "Google", "href": "" }
+    ]
   },
   "hours": [
     { "day": "Monday", "open": "11:00 AM", "close": "10:00 PM" },
@@ -176,5 +182,63 @@
     { "id": "chef-adnan", "type": "image", "src": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&h=600&q=80", "alt": "Chef Adnan plating a grilled platter", "caption": "Chef Adnan, at the pass." },
     { "id": "bowl-build", "type": "image", "src": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&h=800&q=80", "alt": "A build-your-own bowl being assembled", "caption": "Your bowl, built your way." }
   ],
+  "reviews": {
+    "eyebrow": "What Guests Say",
+    "title": "Reviews",
+    "intro": "Halal Syrian-Lebanese cooking, a one-minute walk from Mangos Cafe. Here's what people say after eating with us.",
+    "googleReviewUrl": "https://www.google.com/maps/search/?api=1&query=Mangos+Mediterranean+Grill+17+Smith+Pl+Columbus+OH+43201",
+    "averageRating": 4.7,
+    "totalCount": 186,
+    "items": [
+      { "id": "gr-1", "author": "Omar H.", "rating": 5, "text": "Finally a proper halal spot in Short North. The chicken shawarma tastes like home — you can tell the marinade sits overnight. Chef Adnan came out to check on our table himself.", "source": "Google", "date": "1 month ago", "mock": true },
+      { "id": "gr-2", "author": "Rachel B.", "rating": 5, "text": "The build-your-own bowl is such a good deal. Got saffron rice, chicken kebab and every topping they'd let me pile on. Portion was huge and it came out in maybe six minutes.", "source": "Google", "date": "3 weeks ago", "mock": true },
+      { "id": "gr-3", "author": "Yousef A.", "rating": 5, "text": "Lamb chops were charred exactly right, still pink inside. The garlic toum is the real thing, not the watered-down version. Been three times this month.", "source": "Google", "date": "2 months ago", "mock": true },
+      { "id": "gr-4", "author": "Megan C.", "rating": 4, "text": "Great falafel and the mezze sampler is perfect for two. Only note is it gets packed at lunch, so order ahead if you're on a break.", "source": "Google", "date": "5 weeks ago", "mock": true },
+      { "id": "gr-5", "author": "Tunde O.", "rating": 5, "text": "Came for the halal certification, stayed because the food is genuinely excellent. Fattoush is bright and fresh, and the pita comes out warm every time.", "source": "Google", "date": "2 weeks ago", "mock": true }
+    ]
+  },
+  "promotions": {
+    "eyebrow": "Coupons & Promotions",
+    "title": "Offers",
+    "intro": "A couple of ways to save on your next plate — and an easy gift for anyone who loves a good grill.",
+    "items": [
+      {
+        "id": "gift-card",
+        "kind": "giftcard",
+        "eyebrow": "Gift Card",
+        "title": "Give a good meal",
+        "description": "A Mangos Grill gift card covers wraps, platters and build-your-own bowls. Delivered by email, no expiry.",
+        "highlight": "ANY AMOUNT",
+        "href": "https://example.com/mangos-grill-gift-card",
+        "ctaLabel": "Buy a Gift Card",
+        "terms": "Redeemable in person at 17 Smith Pl. Not redeemable for cash.",
+        "mock": true
+      },
+      {
+        "id": "newsletter-discount",
+        "kind": "newsletter",
+        "eyebrow": "Newsletter",
+        "title": "10% off your next plate",
+        "description": "Join the list for 10% off your next order, plus first word on new specials from Chef Adnan's kitchen.",
+        "highlight": "10% OFF",
+        "code": "GRILL10",
+        "terms": "One use per customer. Not valid with other offers.",
+        "mock": true
+      },
+      {
+        "id": "google-review-discount",
+        "kind": "review",
+        "eyebrow": "Leave a Review",
+        "title": "$5 off for your honest take",
+        "description": "Leave us a review on Google, show it to your server on your next visit, and we'll take $5 off the tab. Good or bad — we read all of them.",
+        "highlight": "$5 OFF",
+        "code": "THANKS5",
+        "href": "https://www.google.com/maps/search/?api=1&query=Mangos+Mediterranean+Grill+17+Smith+Pl+Columbus+OH+43201",
+        "ctaLabel": "Review on Google",
+        "terms": "Show your posted review to your server. One use per customer.",
+        "mock": true
+      }
+    ]
+  },
   "mockContact": true
 }

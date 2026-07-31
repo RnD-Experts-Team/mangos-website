@@ -74,7 +74,7 @@ export function MomentsStrip({ moments }: { moments: MomentItem[] }) {
           <motion.figure
             key={item.id}
             variants={fadeUp}
-            className="group relative aspect-[3/4] w-[72vw] shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-surface-1 sm:w-[46vw] lg:w-[26rem]"
+            className="group relative aspect-[4/3] w-[72vw] shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-surface-1 sm:w-[46vw] lg:w-[26rem]"
           >
             <Image
               src={item.src}

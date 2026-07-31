@@ -15,20 +15,26 @@
     "city": "Columbus",
     "state": "OH",
     "zip": "43201",
-    "mapUrl": "https://www.google.com/maps/search/?api=1&query=21+Smith+Pl+Columbus+OH+43201"
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=21+Smith+Pl+Columbus+OH+43201",
+    "appleMapUrl": "https://maps.apple.com/place?address=21%20Smith%20Pl,%20Columbus,%20OH%20%2043201,%20United%20States&coordinate=39.987969,-83.006313&name=Mangos%20Mediterranean%20Grill%20Lounge%20%26%20Bar&place-id=I7CA865C32F035C65&map=explore"
   },
   "contact": {
     "phone": "(614) 429-3694",
     "email": "hello@mangoscafe.com",
-    "socials": [{ "label": "Instagram", "href": "https://instagram.com" }]
+    "socials": [
+      { "label": "Instagram", "href": "https://www.instagram.com/mangos.614?igsh=MTNuY3Y3MjF5YTc0NA%3D%3D&utm_source=qr" },
+      { "label": "TikTok", "href": "https://www.tiktok.com/@mangos614?_r=1&_t=ZP-98HC8qnZMYJ" },
+      { "label": "Facebook", "href": "https://www.facebook.com/share/1BWgV53gw6/?mibextid=wwXIfr" },
+      { "label": "Google", "href": "https://share.google/9txrt3eZrl49Y0iv6" }
+    ]
   },
   "hours": [
     { "day": "Monday", "open": "4:00 PM", "close": "12:00 AM" },
     { "day": "Tuesday", "open": "4:00 PM", "close": "12:00 AM" },
-    { "day": "Wednesday", "open": "4:00 PM", "close": "1:00 AM" },
-    { "day": "Thursday", "open": "4:00 PM", "close": "1:00 AM" },
-    { "day": "Friday", "open": "4:00 PM", "close": "2:30 AM" },
-    { "day": "Saturday", "open": "2:00 PM", "close": "2:30 AM" },
+    { "day": "Wednesday", "open": "4:00 PM", "close": "12:00 AM" },
+    { "day": "Thursday", "open": "4:00 PM", "close": "12:00 AM" },
+    { "day": "Friday", "open": "4:00 PM", "close": "1:00 AM" },
+    { "day": "Saturday", "open": "2:00 PM", "close": "1:00 AM" },
     { "day": "Sunday", "open": "2:00 PM", "close": "12:00 AM" }
   ],
   "heroImage": {
@@ -89,5 +95,63 @@
     { "id": "bar-crowd", "type": "image", "src": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=800&h=600&q=80", "alt": "A lively night at the bar" },
     { "id": "private-room", "type": "image", "src": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&h=600&q=80", "alt": "The private event room set up for a gathering" },
     { "id": "late-night", "type": "image", "src": "https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&h=800&q=80", "alt": "The bar glowing warmly late into the night" }
-  ]
+  ],
+  "reviews": {
+    "eyebrow": "What People Say",
+    "title": "Reviews",
+    "intro": "Fifteen years in the Short North and still going. Here's what regulars and first-timers have to say about a night at Mangos Cafe.",
+    "googleReviewUrl": "https://share.google/9txrt3eZrl49Y0iv6",
+    "averageRating": 4.6,
+    "totalCount": 312,
+    "items": [
+      { "id": "r-1", "author": "Danielle R.", "rating": 5, "text": "The patio is the whole reason I keep coming back — covered and heated, so it works in February just as well as July. Bartenders actually know what they're doing and the hookah service is the best in the Short North.", "source": "Google", "date": "3 weeks ago", "mock": true },
+      { "id": "r-2", "author": "Marcus T.", "rating": 5, "text": "Booked the private room for my brother's birthday and they took care of everything. Wings and loaded fries kept coming, the LED hookahs were a hit, and the staff never made us feel rushed. Easy ten out of ten.", "source": "Google", "date": "2 months ago", "mock": true },
+      { "id": "r-3", "author": "Priya S.", "rating": 4, "text": "Great spot to land after class — about seven minutes from campus. The mango mule is genuinely excellent. Gets busy on Friday nights so get there before ten if you want the patio.", "source": "Google", "date": "1 month ago", "mock": true },
+      { "id": "r-4", "author": "Andre W.", "rating": 5, "text": "Been coming here since 2013 and it hasn't lost a step. Double apple is still the move. Feels like the one place downtown that never turned into something else.", "source": "Google", "date": "5 months ago", "mock": true },
+      { "id": "r-5", "author": "Kayla M.", "rating": 5, "text": "Asked the bartender to build me something with whiskey and no sweetness and he nailed it on the first try. That's rare. Good music, not so loud you can't talk.", "source": "Google", "date": "6 weeks ago", "mock": true }
+    ]
+  },
+  "promotions": {
+    "eyebrow": "Coupons & Promotions",
+    "title": "Offers",
+    "intro": "A few ways to save on your next night out — and an easy gift for someone who already loves this place.",
+    "items": [
+      {
+        "id": "gift-card",
+        "kind": "giftcard",
+        "eyebrow": "Gift Card",
+        "title": "Give the night",
+        "description": "A Mangos Cafe gift card works on drinks, hookah and food — good any night we're open. Delivered by email, no expiry.",
+        "highlight": "ANY AMOUNT",
+        "href": "https://example.com/mangos-cafe-gift-card",
+        "ctaLabel": "Buy a Gift Card",
+        "terms": "Redeemable in person at 21 Smith Pl. Not redeemable for cash.",
+        "mock": true
+      },
+      {
+        "id": "newsletter-discount",
+        "kind": "newsletter",
+        "eyebrow": "Newsletter",
+        "title": "10% off your next round",
+        "description": "Sign up for the list and we'll send a code for 10% off your next visit, plus first word on events and happy hour changes.",
+        "highlight": "10% OFF",
+        "code": "WELCOME10",
+        "terms": "One use per customer. Not valid with other offers.",
+        "mock": true
+      },
+      {
+        "id": "google-review-discount",
+        "kind": "review",
+        "eyebrow": "Leave a Review",
+        "title": "$5 off for your honest take",
+        "description": "Leave us a review on Google, show it to your server on your next visit, and we'll take $5 off the tab. Good or bad — we read all of them.",
+        "highlight": "$5 OFF",
+        "code": "THANKS5",
+        "href": "https://share.google/9txrt3eZrl49Y0iv6",
+        "ctaLabel": "Review on Google",
+        "terms": "Show your posted review to your server. One use per customer.",
+        "mock": true
+      }
+    ]
+  }
 }
