@@ -23,7 +23,7 @@ export default async function BarPage() {
     <>
       <CustomCursor />
       <BusinessHero image={bar.heroImage} eyebrow={bar.kind} title={bar.name} borderBottom>
-        <HeroMeta tagline={bar.tagline} address={bar.address} hours={bar.hours} />
+        <HeroMeta tagline={bar.tagline} address={bar.address} contact={bar.contact} hours={bar.hours} />
       </BusinessHero>
 
       <AboutSection

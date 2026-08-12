@@ -19,7 +19,7 @@ export default async function GrillPage() {
 
       {/* Rendered in English now; Arabic (EN/ع + RTL) arrives in the next pass. */}
       <BusinessHero image={grill.heroImage} eyebrow={grill.kind.en} title={grill.name.en} objectFit="contain">
-        <HeroMeta tagline={grill.tagline.en} address={grill.address} hours={grill.hours} />
+        <HeroMeta tagline={grill.tagline.en} address={grill.address} contact={grill.contact} hours={grill.hours} />
       </BusinessHero>
 
       <AboutSection

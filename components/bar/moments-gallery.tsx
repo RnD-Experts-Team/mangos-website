@@ -7,20 +7,22 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Lightbox } from "@/components/ui/lightbox";
-import { staggerContainer, fadeUp } from "@/lib/motion";
+import { dur, easeOut, staggerContainer, fadeUp } from "@/lib/motion";
 import type { MomentItem } from "@/types/content";
 import { cn } from "@/lib/cn";
 
 /**
- * Three bento arrangements the wall rotates through. Each page is 5 tiles whose
- * spans sum to exactly 8 cells — the capacity of the 4-column × 2-row desktop
- * grid — so the wall can never spill onto a third row. Spans are `lg:`-only, so
- * below `lg` every tile is a plain 1x1; the 5th is hidden there, leaving 4 tiles
- * in 2 columns, which is also exactly 2 rows.
+ * Three bento arrangements the wall slides through, laid out side by side in
+ * one continuous track (see `MomentsGallery`) rather than swapped in place —
+ * that's what makes the transition read as sliding to the next set instead of
+ * a cross-fade. Each page is 5 tiles whose spans sum to exactly 8 cells — the
+ * capacity of the 4-column × 2-row desktop grid — so no page ever spills onto
+ * a third row. Spans are `lg:`-only, so below `lg` every tile is a plain 1x1;
+ * the 5th is hidden there, leaving 4 tiles in 2 columns, also exactly 2 rows.
  *
  * `offset` is where each page starts reading from `moments`. With 8 photos and
- * 5 slots some overlap between pages is unavoidable — fine while the photos are
- * mock placeholders.
+ * 5 slots some overlap between pages is unavoidable — fine while the photos
+ * are mock placeholders.
  */
 const PAGES = [
   // 4+1+1+1+1 — feature left
@@ -31,7 +33,7 @@ const PAGES = [
   { offset: 6, spans: ["lg:row-span-2", "lg:row-span-2", "lg:col-span-2", "", "hidden lg:block"] },
 ];
 
-const ROTATE_MS = 2500;
+const ROTATE_MS = 3000;
 
 function MomentVideoPreview({ item }: { item: MomentItem }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -109,8 +111,10 @@ function MomentTile({
 }
 
 /**
- * Bento wall that rotates through three arrangements. Tap a tile to open the
- * full-screen viewer with swipe/arrow paging over every photo.
+ * Sliding wall: all three bento arrangements sit side by side in one track,
+ * and the track's own `x` transform animates between them — a genuine slide,
+ * not a swap-in-place. Tap a tile to open the full-screen viewer with
+ * swipe/arrow paging over every photo.
  */
 export function MomentsGallery({ moments }: { moments: MomentItem[] }) {
   const [index, setIndex] = useState<number | null>(null);
@@ -122,7 +126,7 @@ export function MomentsGallery({ moments }: { moments: MomentItem[] }) {
 
   const active = index !== null ? moments[index] : null;
 
-  // Only rotate while the wall is actually on screen.
+  // Only slide while the wall is actually on screen.
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
@@ -136,7 +140,7 @@ export function MomentsGallery({ moments }: { moments: MomentItem[] }) {
   /*
    * The effect's own cleanup clears the interval, and the dep list re-arms it —
    * so each pause reason simply stops the timer and resuming starts a fresh
-   * 2.5s. The reduced-motion check is mandatory: the app-wide MotionConfig
+   * 3s. The reduced-motion check is mandatory: the app-wide MotionConfig
    * strips animations but has no effect on a JS timer.
    */
   useEffect(() => {
@@ -146,14 +150,6 @@ export function MomentsGallery({ moments }: { moments: MomentItem[] }) {
   }, [reduce, paused, inView, index]);
 
   if (moments.length === 0) return null;
-
-  const { offset, spans } = PAGES[page];
-  // Map each slot back to its absolute index in `moments` — the lightbox pages
-  // over the full array, so a tile must know where it really sits.
-  const tiles = spans.map((span, i) => {
-    const abs = (offset + i) % moments.length;
-    return { span, abs, item: moments[abs] };
-  });
 
   return (
     <Section id="moments" className="scroll-mt-28 pt-0 sm:pt-0">
@@ -169,22 +165,35 @@ export function MomentsGallery({ moments }: { moments: MomentItem[] }) {
           onMouseLeave={() => setPaused(false)}
           onFocusCapture={() => setPaused(true)}
           onBlurCapture={() => setPaused(false)}
+          className="mt-10 overflow-hidden rounded-2xl"
         >
-          {/* Keyed by page so the grid re-mounts and re-plays its stagger on each rotation. */}
+          {/* Single persistent track — pages slide via `x`, never remount. */}
           <motion.div
-            key={page}
             variants={staggerContainer}
             initial="hidden"
-            animate="show"
-            className="mt-10 grid auto-rows-[150px] grid-cols-2 gap-3 [grid-auto-flow:dense] sm:auto-rows-[180px] lg:grid-cols-4"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+            animate={{ x: `-${page * 100}%` }}
+            transition={{ duration: dur.slow, ease: easeOut }}
+            className="flex"
           >
-            {tiles.map(({ item, span, abs }, i) => (
-              <MomentTile
-                key={`${abs}-${i}`}
-                item={item}
-                span={span}
-                onOpen={() => setIndex(abs)}
-              />
+            {PAGES.map(({ offset, spans }, pageIndex) => (
+              <div
+                key={pageIndex}
+                className="grid w-full shrink-0 auto-rows-[150px] grid-cols-2 gap-3 [grid-auto-flow:dense] sm:auto-rows-[180px] lg:grid-cols-4"
+              >
+                {spans.map((span, i) => {
+                  const abs = (offset + i) % moments.length;
+                  return (
+                    <MomentTile
+                      key={`${pageIndex}-${abs}-${i}`}
+                      item={moments[abs]}
+                      span={span}
+                      onOpen={() => setIndex(abs)}
+                    />
+                  );
+                })}
+              </div>
             ))}
           </motion.div>
 

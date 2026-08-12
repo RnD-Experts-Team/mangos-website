@@ -43,12 +43,13 @@ function CodeChip({ code }: { code: string }) {
     <button
       type="button"
       onClick={copy}
-      className="group inline-flex cursor-pointer items-center gap-2 rounded-full border border-dashed border-accent/50 bg-accent/10 px-3.5 py-1.5 transition-colors hover:border-accent"
+      title={copied ? "Copied" : "Click to copy"}
+      className={cn(
+        "inline-flex cursor-pointer items-center rounded-full border px-3.5 py-1.5 transition-colors",
+        copied ? "border-accent bg-accent/20" : "border-dashed border-accent/50 bg-accent/10 hover:border-accent",
+      )}
     >
       <span className="font-heading text-sm tracking-[0.14em] text-ink">{code}</span>
-      <span className="text-xs text-ink-faint transition-colors group-hover:text-ink-muted">
-        {copied ? "Copied" : "Copy"}
-      </span>
     </button>
   );
 }
@@ -150,7 +151,6 @@ export function PromotionsSection({ promotions }: { promotions: PromotionsBlock 
                           {promo.ctaLabel ?? "Learn more"}
                         </Button>
                       )}
-                      {promo.kind === "review" && promo.code && <CodeChip code={promo.code} />}
                     </div>
                   )}
 

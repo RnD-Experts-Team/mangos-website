@@ -1,13 +1,15 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import type { MomentItem } from "@/types/content";
+
+const AUTOPLAY_MS = 3500;
 
 function ArrowIcon({ dir }: { dir: "left" | "right" }) {
   return (
@@ -29,6 +31,9 @@ function ArrowIcon({ dir }: { dir: "left" | "right" }) {
  */
 export function MomentsStrip({ moments }: { moments: MomentItem[] }) {
   const railRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+  const [inView, setInView] = useState(false);
+  const reduce = useReducedMotion();
 
   function nudge(dir: "left" | "right") {
     const el = railRef.current;
@@ -36,6 +41,33 @@ export function MomentsStrip({ moments }: { moments: MomentItem[] }) {
     const amount = el.clientWidth * 0.8;
     el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
   }
+
+  // Only auto-advance while the rail is actually on screen.
+  useEffect(() => {
+    const el = railRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), {
+      threshold: 0.2,
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  /*
+   * The reduced-motion check is mandatory: the app-wide MotionConfig strips
+   * transform/layout animations but has no effect on this plain scroll timer.
+   */
+  useEffect(() => {
+    if (reduce || paused || !inView) return;
+    const id = setInterval(() => {
+      const el = railRef.current;
+      if (!el) return;
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
+      if (atEnd) el.scrollTo({ left: 0, behavior: "smooth" });
+      else nudge("right");
+    }, AUTOPLAY_MS);
+    return () => clearInterval(id);
+  }, [reduce, paused, inView]);
 
   return (
     <Section id="moments" className="overflow-hidden scroll-mt-20">
@@ -64,6 +96,10 @@ export function MomentsStrip({ moments }: { moments: MomentItem[] }) {
       {/* Full-bleed rail so cards can bleed to the right edge; left inset aligns to the container. */}
       <motion.div
         ref={railRef}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocusCapture={() => setPaused(true)}
+        onBlurCapture={() => setPaused(false)}
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"

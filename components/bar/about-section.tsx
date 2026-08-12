@@ -69,18 +69,24 @@ export function AboutSection({
             <SocialLinks socials={contact.socials} />
           </div>
 
-          <div className="mt-8 rounded-2xl border border-white/10 bg-surface-1 p-5 sm:p-6">
+          <div className="mt-6 rounded-2xl border border-white/10 bg-surface-1 p-5 sm:p-6">
             <h3 className="font-heading text-xs uppercase tracking-[0.16em] text-ink-faint">Hours</h3>
-            <ul className="mt-3 grid grid-cols-1 gap-x-8 gap-y-1.5 text-sm sm:grid-cols-2">
+            <ul className="mt-3 grid grid-cols-1 gap-x-8 gap-y-1.5 text-xs sm:grid-cols-2">
               {ordered.map((h) => {
                 const today = h.day === todayName;
                 return (
                   <li
                     key={h.day}
-                    className={cn("flex justify-between gap-4", today ? "text-ink" : "text-ink-muted")}
+                    className={cn(
+                      "flex items-center justify-between gap-4",
+                      today ? "text-ink" : "text-ink-muted",
+                    )}
                   >
-                    <span className={today ? "font-medium" : undefined}>{h.day}</span>
-                    <span className="tabular-nums">
+                    <span className={cn("inline-flex items-center gap-1.5", today && "font-medium")}>
+                      {today && <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />}
+                      {h.day}
+                    </span>
+                    <span className={cn("tabular-nums", today && "font-semibold text-accent")}>
                       {h.closed ? "Closed" : `${h.open} – ${h.close}`}
                     </span>
                   </li>

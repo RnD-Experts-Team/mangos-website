@@ -1,11 +1,8 @@
 import type { Bar, Grill, Hours } from "@/types/content";
 import { Reveal } from "@/components/ui/reveal";
+import { cn } from "@/lib/cn";
 
-const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-function todayHours(hours: Hours[]) {
-  return hours.find((h) => h.day === DAY_NAMES[new Date().getDay()]);
-}
+const DAY_ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 function telHref(phone: string) {
   return `tel:${phone.replace(/[^\d+]/g, "")}`;
@@ -26,7 +23,11 @@ function VisitCard({
   phone: string;
   hours: Hours[];
 }) {
-  const today = todayHours(hours);
+  const todayName = new Date().toLocaleDateString("en-US", { weekday: "long" });
+  const byDay: Record<string, Hours> = {};
+  for (const h of hours) byDay[h.day] = h;
+  const ordered = DAY_ORDER.map((d) => byDay[d]).filter(Boolean);
+
   return (
     <div className="rounded-xl border border-white/10 bg-surface-1 p-5 sm:p-6">
       <p className="text-eyebrow text-[10px] text-ink-faint">{label}</p>
@@ -34,15 +35,33 @@ function VisitCard({
       <p className="mt-2 text-sm text-ink-muted">
         {line1}, {city}
       </p>
-      <p className="mt-3 text-sm">
-        <span className="text-ink-faint">Today </span>
-        <span className="font-medium text-accent">
-          {today?.closed ? "Closed" : today ? `${today.open} – ${today.close}` : "—"}
-        </span>
-      </p>
+
+      <h4 className="mt-4 font-heading text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+        Hours
+      </h4>
+      <ul className="mt-2 grid grid-cols-1 gap-x-6 gap-y-1 text-sm sm:grid-cols-2">
+        {ordered.map((h) => {
+          const today = h.day === todayName;
+          return (
+            <li
+              key={h.day}
+              className={cn("flex items-center justify-between gap-4", today ? "text-ink" : "text-ink-muted")}
+            >
+              <span className={cn("inline-flex items-center gap-1.5", today && "font-medium")}>
+                {today && <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />}
+                {h.day}
+              </span>
+              <span className={cn("tabular-nums", today && "font-semibold text-accent")}>
+                {h.closed ? "Closed" : `${h.open} – ${h.close}`}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+
       <a
         href={telHref(phone)}
-        className="mt-3 inline-block text-sm text-ink-muted underline-offset-4 hover:text-ink hover:underline"
+        className="mt-4 inline-block text-sm text-ink-muted underline-offset-4 hover:text-ink hover:underline"
       >
         {phone}
       </a>
@@ -50,7 +69,7 @@ function VisitCard({
   );
 }
 
-/** Hub-level teaser: quick address/hours/phone for both spots. Full detail lives on /bar and /grill. */
+/** Hub-level summary: address, full weekly hours, and phone for both spots. */
 export function VisitUs({ bar, grill }: { bar: Bar; grill: Grill }) {
   return (
     <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:gap-6">

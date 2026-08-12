@@ -2,7 +2,11 @@
 
 import { useSyncExternalStore } from "react";
 import { useMapsHref } from "@/hooks/use-maps-href";
-import type { Address, Hours } from "@/types/content";
+import type { Address, Contact, Hours } from "@/types/content";
+
+function telHref(phone: string) {
+  return `tel:${phone.replace(/[^\d+]/g, "")}`;
+}
 
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -67,13 +71,35 @@ function PinIcon() {
   );
 }
 
+function PhoneIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden className="text-ink-faint">
+      <path
+        fill="currentColor"
+        d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c.97.32 2 .48 3 .48a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1 .16 2.03.48 3a1 1 0 0 1-.24 1.02L6.6 10.8Z"
+      />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden className="text-ink-faint">
+      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M4 7l7.2 5.4a1.3 1.3 0 0 0 1.6 0L20 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function HeroMeta({
   tagline,
   address,
+  contact,
   hours,
 }: {
   tagline: string;
   address: Address;
+  contact: Contact;
   hours: Hours[];
 }) {
   const status = useSyncExternalStore(subscribe, () => computeStatus(hours), () => "");
@@ -93,6 +119,22 @@ export function HeroMeta({
         >
           <PinIcon />
           {address.line1} · {address.city}, {address.state}
+        </a>
+
+        <a
+          href={telHref(contact.phone)}
+          className="inline-flex items-center gap-1.5 transition-colors hover:text-ink"
+        >
+          <PhoneIcon />
+          {contact.phone}
+        </a>
+
+        <a
+          href={`mailto:${contact.email}`}
+          className="inline-flex items-center gap-1.5 transition-colors hover:text-ink"
+        >
+          <MailIcon />
+          Email
         </a>
 
         {open && (
