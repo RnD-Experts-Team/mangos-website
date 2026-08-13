@@ -88,7 +88,7 @@ export function StoreCard({
         alt={card.buildingPhoto.alt}
         fill
         priority
-        sizes="(max-width: 1024px) 100vw, 50vw"
+        sizes="100vw"
         className="object-cover brightness-100 transition-all duration-[900ms] ease-out group-hover:scale-[1.05] group-hover:brightness-125"
       />
 
