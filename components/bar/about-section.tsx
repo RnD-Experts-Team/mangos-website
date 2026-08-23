@@ -62,9 +62,18 @@ export function AboutSection({
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Button href={telHref(contact.phone)}>Call {contact.phone}</Button>
-            <Button variant="outline" href={`mailto:${contact.email}`}>
-              Email
-            </Button>
+            {contact.email ? (
+              <Button variant="outline" href={`mailto:${contact.email}`}>
+                Email
+              </Button>
+            ) : (
+              <span
+                title="Email — coming soon"
+                className="inline-flex h-11 cursor-default items-center justify-center gap-2 rounded-full border border-white/10 px-5 font-heading text-sm font-medium uppercase tracking-[0.08em] text-ink-faint/50"
+              >
+                Email
+              </span>
+            )}
             <DirectionsButton address={address} />
             <SocialLinks socials={contact.socials} />
           </div>

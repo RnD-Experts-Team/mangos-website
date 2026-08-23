@@ -10,7 +10,7 @@
       "id": "bar",
       "name": "Mangos Cafe",
       "kind": "Bar • Hookah • Restaurant",
-      "blurb": "Late nights, hookah and good company since 2011.",
+      "blurb": "Mangos Mediterranean Grill Lounge & Bar — late nights, hookah and good company since 2011.",
       "href": "/bar",
       "buildingPhoto": {
         "src": "/images/bar/bar-building.png",
@@ -24,7 +24,7 @@
       "name": "Mangos Mediterranean Grill",
       "kind": "Mediterranean Grill • Halal",
       "blurb": "Syrian-Lebanese halal cooking from Chef Adnan.",
-      "href": "/grill",
+      "href": "https://mangosmediterranean.com/",
       "buildingPhoto": {
         "src": "/images/grill/grill-building.jpeg",
         "alt": "Mangos Mediterranean Grill storefront during the day"

@@ -129,13 +129,20 @@ export function HeroMeta({
           {contact.phone}
         </a>
 
-        <a
-          href={`mailto:${contact.email}`}
-          className="inline-flex items-center gap-1.5 transition-colors hover:text-ink"
-        >
-          <MailIcon />
-          Email
-        </a>
+        {contact.email ? (
+          <a
+            href={`mailto:${contact.email}`}
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-ink"
+          >
+            <MailIcon />
+            Email
+          </a>
+        ) : (
+          <span title="Email — coming soon" className="inline-flex items-center gap-1.5 text-ink-faint/50">
+            <MailIcon />
+            Email
+          </span>
+        )}
 
         {open && (
           <span className="inline-flex items-center gap-1.5">

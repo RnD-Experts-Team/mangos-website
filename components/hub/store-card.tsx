@@ -57,6 +57,9 @@ export function StoreCard({
   const ref = useRef<HTMLAnchorElement>(null);
   const { begin } = useHeroTransition();
   const mapsHref = useMapsHref(address);
+  // External destinations (a business's own site) just open in a new tab —
+  // no card→hero morph, since there's no matching hero on this site to land on.
+  const isExternal = /^https?:\/\//.test(card.href);
 
   function onClick(e: React.MouseEvent<HTMLAnchorElement>) {
     // Let modified clicks open in a new tab normally.
@@ -136,10 +139,17 @@ export function StoreCard({
             <PhoneIcon />
             {phone}
           </a>
-          <a href={`mailto:${email}`} className="inline-flex items-center gap-1.5 transition-colors hover:text-white">
-            <MailIcon />
-            Email
-          </a>
+          {email ? (
+            <a href={`mailto:${email}`} className="inline-flex items-center gap-1.5 transition-colors hover:text-white">
+              <MailIcon />
+              Email
+            </a>
+          ) : (
+            <span title="Email — coming soon" className="inline-flex items-center gap-1.5 text-white/40">
+              <MailIcon />
+              Email
+            </span>
+          )}
         </motion.div>
 
         <span
@@ -156,13 +166,23 @@ export function StoreCard({
         </span>
       </motion.div>
 
-      <Link
-        ref={ref}
-        href={card.href}
-        onClick={onClick}
-        aria-label={`Enter ${card.name}`}
-        className="absolute inset-0 z-10"
-      />
+      {isExternal ? (
+        <a
+          href={card.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit ${card.name} (opens in a new tab)`}
+          className="absolute inset-0 z-10"
+        />
+      ) : (
+        <Link
+          ref={ref}
+          href={card.href}
+          onClick={onClick}
+          aria-label={`Enter ${card.name}`}
+          className="absolute inset-0 z-10"
+        />
+      )}
     </div>
   );
 }

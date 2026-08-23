@@ -81,7 +81,7 @@ export function BrandHeader() {
             animate={{ scale: condensed ? 0.86 : 1 }}
             transition={{ duration: dur.base, ease: easeStandard }}
           >
-            <Wordmark className="text-3xl" />
+            <Wordmark outline className="text-3xl" />
           </motion.span>
         </Link>
 

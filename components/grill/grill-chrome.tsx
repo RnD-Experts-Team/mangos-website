@@ -75,7 +75,7 @@ export function GrillHeader() {
             animate={{ scale: condensed ? 0.86 : 1 }}
             transition={{ duration: dur.base, ease: easeStandard }}
           >
-            <Wordmark className="text-2xl" />
+            <Wordmark outline className="text-2xl" />
           </motion.span>
           <span className="hidden text-eyebrow text-[10px] text-ink-faint sm:block">
             Mediterranean Grill

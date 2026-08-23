@@ -25,14 +25,14 @@
     }
   },
   "address": {
-    "line1": "17 Smith Pl",
+    "line1": "1247 N High St",
     "city": "Columbus",
     "state": "OH",
     "zip": "43201",
-    "mapUrl": "https://www.google.com/maps/search/?api=1&query=17+Smith+Pl+Columbus+OH+43201"
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=1247+N+High+St+Columbus+OH+43201"
   },
   "contact": {
-    "phone": "(614) 000-0000",
+    "phone": "(614) 429-3694",
     "email": "hello@mangosgrill.com",
     "socials": [
       { "label": "Instagram", "href": "" },
@@ -42,13 +42,13 @@
     ]
   },
   "hours": [
-    { "day": "Monday", "open": "11:00 AM", "close": "10:00 PM" },
-    { "day": "Tuesday", "open": "11:00 AM", "close": "10:00 PM" },
-    { "day": "Wednesday", "open": "11:00 AM", "close": "10:00 PM" },
-    { "day": "Thursday", "open": "11:00 AM", "close": "10:00 PM" },
-    { "day": "Friday", "open": "11:00 AM", "close": "11:00 PM" },
-    { "day": "Saturday", "open": "11:00 AM", "close": "11:00 PM" },
-    { "day": "Sunday", "open": "12:00 PM", "close": "9:00 PM" }
+    { "day": "Monday", "open": "2:00 PM", "close": "12:00 AM" },
+    { "day": "Tuesday", "open": "2:00 PM", "close": "12:00 AM" },
+    { "day": "Wednesday", "open": "2:00 PM", "close": "12:00 AM" },
+    { "day": "Thursday", "open": "2:00 PM", "close": "12:00 AM" },
+    { "day": "Friday", "open": "2:00 PM", "close": "2:00 AM" },
+    { "day": "Saturday", "open": "2:00 PM", "close": "2:00 AM" },
+    { "day": "Sunday", "open": "2:00 PM", "close": "12:00 AM" }
   ],
   "heroImage": {
     "src": "/images/grill/grill-building.jpeg",
