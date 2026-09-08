@@ -123,10 +123,9 @@
         "title": "Give the night",
         "description": "A Mangos Cafe gift card works on drinks, hookah and food — good any night we're open. Delivered by email, no expiry.",
         "highlight": "ANY AMOUNT",
-        "href": "https://example.com/mangos-cafe-gift-card",
+        "href": "https://app.squareup.com/gift/MLTPV6H3971C0/order",
         "ctaLabel": "Buy a Gift Card",
-        "terms": "Redeemable in person at 21 Smith Pl. Not redeemable for cash.",
-        "mock": true
+        "terms": "Redeemable in person at 21 Smith Pl. Not redeemable for cash."
       },
       {
         "id": "newsletter-discount",

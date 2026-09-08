@@ -4,7 +4,8 @@ import { getBar } from "@/services/bar.service";
 import { BusinessHero } from "@/components/business/business-hero";
 import { HeroMeta } from "@/components/business/hero-meta";
 import { AboutSection } from "@/components/bar/about-section";
-import { MenuSection } from "@/components/bar/menu-section";
+import { MenuSection } from "@/components/bar/menu-section"; // TEMP: unused while the PDF menu is live — see MenuPdfSection below
+import { MenuPdfSection } from "@/components/bar/menu-pdf-section";
 import { MomentsGallery } from "@/components/bar/moments-gallery";
 import { ReviewsSection } from "@/components/bar/reviews-section";
 import { PromotionsSection } from "@/components/bar/promotions-section";
@@ -34,7 +35,11 @@ export default async function BarPage() {
         hours={bar.hours}
       />
 
-      <MenuSection categories={bar.menu} />
+      {/* Old interactive tabbed menu — temporarily replaced by the PDF menu below.
+          Restore by uncommenting this and removing <MenuPdfSection />. */}
+      {/* <MenuSection categories={bar.menu} /> */}
+
+      <MenuPdfSection />
 
       <MomentsGallery moments={bar.moments} />
 
