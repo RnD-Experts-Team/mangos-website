@@ -20,17 +20,18 @@ import { cn } from "@/lib/cn";
  * a third row. Spans are `lg:`-only, so below `lg` every tile is a plain 1x1;
  * the 5th is hidden there, leaving 4 tiles in 2 columns, also exactly 2 rows.
  *
- * `offset` is where each page starts reading from `moments`. With 8 photos and
- * 5 slots some overlap between pages is unavoidable — fine while the photos
- * are mock placeholders.
+ * `offset` is where each page starts reading from `moments`. Spacing them 5
+ * apart means the three pages cover indices 0-4, 5-9 and 10-12 (+0,1 wrapping)
+ * — i.e. all 13 photos get shown, with only a two-photo repeat on the last
+ * page. Tighter offsets would leave the tail of the array unreachable as tiles.
  */
 const PAGES = [
   // 4+1+1+1+1 — feature left
   { offset: 0, spans: ["lg:col-span-2 lg:row-span-2", "", "", "", "hidden lg:block"] },
   // 1+1+4+1+1 — feature right
-  { offset: 3, spans: ["", "", "lg:col-span-2 lg:row-span-2", "", "hidden lg:block"] },
+  { offset: 5, spans: ["", "", "lg:col-span-2 lg:row-span-2", "", "hidden lg:block"] },
   // 2+2+2+1+1 — twin towers
-  { offset: 6, spans: ["lg:row-span-2", "lg:row-span-2", "lg:col-span-2", "", "hidden lg:block"] },
+  { offset: 10, spans: ["lg:row-span-2", "lg:row-span-2", "lg:col-span-2", "", "hidden lg:block"] },
 ];
 
 const ROTATE_MS = 3000;

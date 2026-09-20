@@ -7,8 +7,8 @@
   "blurb": "A bar, hookah lounge and restaurant on Smith Place — where Columbus comes to unwind, celebrate and linger since 2011.",
   "about": "Mangos Cafe is located in downtown Columbus' Short North Arts District, about a 7-minute drive from Ohio State University. Our large patio is fully covered and open all year long, with heaters to keep you warm through the winter. We also have a private room available to rent for parties, meetings and special events.",
   "aboutImage": {
-    "src": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&h=1000&q=80",
-    "alt": "A backlit shelf of premium spirits and cocktail bottles at Mangos Cafe"
+    "src": "/images/bar/newimages/aboutsection.jpeg",
+    "alt": "A Mazaya hookah glowing teal on the bar at Mangos Cafe"
   },
   "address": {
     "line1": "21 Smith Pl",
@@ -87,14 +87,19 @@
     }
   ],
   "moments": [
-    { "id": "patio-glow", "type": "image", "src": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&h=800&q=80", "alt": "Warm string lights glowing over the covered patio at night" },
-    { "id": "string-lights", "type": "image", "src": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=800&h=600&q=80", "alt": "Close-up of warm string lights against the night sky" },
-    { "id": "hookah-smoke", "type": "image", "src": "https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&h=1000&q=80", "alt": "Smoke swirling from a hookah session" },
-    { "id": "cocktail-pour", "type": "image", "src": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&h=800&q=80", "alt": "A cocktail being poured at the bar" },
-    { "id": "neon-sign", "type": "image", "src": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=800&h=1000&q=80", "alt": "Close-up of a glowing neon bar sign at night" },
-    { "id": "bar-crowd", "type": "image", "src": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=800&h=600&q=80", "alt": "A lively night at the bar" },
-    { "id": "private-room", "type": "image", "src": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&h=600&q=80", "alt": "The private event room set up for a gathering" },
-    { "id": "late-night", "type": "image", "src": "https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&h=800&q=80", "alt": "The bar glowing warmly late into the night" }
+    { "id": "patio-night", "type": "image", "src": "/images/bar/newimages/bar-02.jpeg", "alt": "The covered patio at dusk under warm string lights, with matches on the screens" },
+    { "id": "cocktails-lineup", "type": "image", "src": "/images/bar/newimages/bar-09.jpeg", "alt": "A row of colourful cocktails garnished with lime and cherries on the bar" },
+    { "id": "wings-fries", "type": "image", "src": "/images/bar/newimages/bar-04.jpeg", "alt": "BBQ chicken wings and crinkle-cut fries with three dipping sauces" },
+    { "id": "lounge-crowd", "type": "image", "src": "/images/bar/newimages/bar-01.jpeg", "alt": "A full lounge on a game night, guests talking over drinks beneath the screens" },
+    { "id": "hookah-lemon-mint", "type": "image", "src": "/images/bar/newimages/bar-10.jpeg", "alt": "A Mazaya lemon and mint hookah set up on the bar beside a fresh juice" },
+    { "id": "patio-day", "type": "image", "src": "/images/bar/newimages/bar-05.jpeg", "alt": "The covered patio by day, framed by hedge walls and the Mangos sports bar sign" },
+    { "id": "margaritas", "type": "image", "src": "/images/bar/newimages/bar-06.jpeg", "alt": "Two frozen margaritas in goblets on the bar top" },
+    { "id": "tacos", "type": "image", "src": "/images/bar/newimages/bar-03.jpeg", "alt": "Three street tacos topped with salsa, red onion and cilantro" },
+    { "id": "bar-counter", "type": "image", "src": "/images/bar/newimages/bar-07.jpeg", "alt": "The main bar counter backed by a full wall of spirits and the hookah display case" },
+    { "id": "hookah-green", "type": "image", "src": "/images/bar/newimages/bar-11.jpeg", "alt": "A hookah glowing green on the bar with the match on in the background" },
+    { "id": "private-room", "type": "image", "src": "/images/bar/newimages/bar-08.jpeg", "alt": "The private event room, leather armchairs facing screens on every wall" },
+    { "id": "frozen-cocktails", "type": "image", "src": "/images/bar/newimages/bar-12.jpeg", "alt": "Four frozen cocktails topped with cherries and citrus wheels" },
+    { "id": "patio-good-vibes", "type": "image", "src": "/images/bar/newimages/bar-13.jpeg", "alt": "The patio by day under a Good Vibes neon sign and string lights" }
   ],
   "reviews": {
     "eyebrow": "What People Say",
